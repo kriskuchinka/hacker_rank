@@ -30,13 +30,13 @@ function wiggleArrangeArray(intArr) {
     // Loop through n array
     //---> Ran out of time to complete 
 	flag = 0;
-	var max_number = Math.max.apply(null, n);
-	var min_number = Math.min.apply(null, n);
+
     
     for (i = 0; i = n.length; i++) {
    		console.log("Inside loop.");
    		console.log(n);
-   		new_array.push(max_number);
+		var max_number = Math.max.apply(null, n);
+		var min_number = Math.min.apply(null, n);
    		// var current_num = n[i];
    		// console.log(current_num);
 		// n.pop(max_number);
@@ -48,21 +48,21 @@ function wiggleArrangeArray(intArr) {
 		// } // end of if
 
 		if (flag === 0) {
-			console.log("In max if statement.");    
-
-			console.log("The max number is: " + max_number);
-			n.pop(max_number);
-			// new_array.push(max_number);
+			console.log("In max if statement."); 
+	   		console.log("The max number is: " + max_number);
+	   		new_array.push(max_number);
+	   		var index_location = n.indexOf(max_number);   
+			n.splice(index_location, 1);
 			console.log("The new array is: " + new_array);
 			flag = 1;
 			console.log("Flag is set to: " + flag);
 		} else  if (flag === 1) {
 			console.log("In min if statement.");
-
     		console.log("The min number is: " + min_number);
-    		n.pop(min_number);
-    		console.log(n);
     		new_array.push(min_number);
+			var index_location = n.indexOf(min_number);
+			n.splice(index_location, 1);
+    		console.log(n);
     		console.log("The new array is: " + new_array);
     		flag = 0;
     		console.log("Flag is set to: " + flag);
