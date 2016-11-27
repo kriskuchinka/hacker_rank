@@ -1,18 +1,12 @@
 console.log("JavaScript is connected.");
 
 function sortLibrary(object) {
-    // var library is defined, use it in your code
-    // Loop through library and pull out book titles
-    var bookList = "";
-    for(i in object) {
-    	// console.log("i now equals:" + i);
-    	bookList += object[i].title + "\n";
-     }
-  	object.sort(function(){
-  		return bookList;
-  	});
-   	console.log(bookList);
- }
+	var libraryList = library.sort(function(a ,b) {
+		return a.title > b.title;
+	});
+	console.log(libraryList);
+
+} // end of FUNCTION sortLibrary
 
 // tail starts here
 var library = [
